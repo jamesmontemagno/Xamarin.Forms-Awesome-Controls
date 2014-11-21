@@ -3,6 +3,8 @@ Xamarin.Forms Android Pull To Refresh/SwipeRefreshLayout
 
 Implementation of pull to refresh for Xamarin.Forms Android. Currently supports ListViews. Read about the implementation on the blog:
 
+http://motzcod.es/post/103224921992/pull-swipe-to-refresh-for-xamarin-forms-android-apps
+
 
 ![](http://media.tumblr.com/bb7899a2585a769a17edaf472663cd7f/tumblr_inline_nfeoptHlDJ1qzumo9.gif)
 
