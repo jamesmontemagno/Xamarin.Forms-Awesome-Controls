@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomProgressBar.Android", "Android\CustomProgressBar.Android.csproj", "{2B700BAB-5304-4AC1-8321-6F68578D9459}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomProgressBar.Portable", "CustomProgressBar.Portable\CustomProgressBar.Portable.csproj", "{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Release|iPhone.Build.0 = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{2B700BAB-5304-4AC1-8321-6F68578D9459}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.AppStore|iPhone.ActiveCfg = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.AppStore|iPhone.Build.0 = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Release|iPhone.Build.0 = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{BCBDC8BF-157E-450D-8B1E-4CBF49A81EDA}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Android\CustomProgressBar.Android.csproj
+	EndGlobalSection
+EndGlobal

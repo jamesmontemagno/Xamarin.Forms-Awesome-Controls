@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="CustomProgressBar.ProgressBarXAML"
+    xmlns:local="clr-namespace:CustomProgressBar.CustomControls;assembly=CustomProgressBar.Droid">
+    <ContentPage.Content>
+        <StackLayout
+        	Spacing = "10"
+	        Padding = "10">
+
+	        <StackLayout
+	        	Orientation="Horizontal"
+	        	 HorizontalOptions="Center"
+	        	 Spacing = "10">
+				<Button Text ="-5" 
+						Command="{Binding AddProgressCommand}" 
+						CommandParameter="-5"/>
+				<Button Text ="+5" 
+						Command="{Binding AddProgressCommand}" 
+						CommandParameter="+5"/>
+				<Button Text ="Indeterminate" 
+						Command="{Binding ToggleIndeterminateCommand}"/>
+				
+			
+	        </StackLayout>
+	        <Slider Maximum="150" Minimum="50" Value="{Binding SpeedF, Mode=TwoWay}"/>
+	        <local:CircularProgress
+	         	WidthRequest="300" 
+	         	HeightRequest="300"
+	         	Indeterminate = "{Binding IsIndeterminate}"
+	         	Progress = "{Binding Progress}"
+	         	ProgressColor = "{Binding ProgressColor}"
+	         	ProgressBackgroundColor = "{Binding ProgressBackgroundColor}"
+	         	IndeterminateSpeed = "{Binding Speed}"/>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

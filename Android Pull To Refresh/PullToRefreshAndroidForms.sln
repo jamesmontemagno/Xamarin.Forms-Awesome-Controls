@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PullToRefreshAndroidForms.Android", "Android\PullToRefreshAndroidForms.Android.csproj", "{D4906739-0CC1-4791-80EA-A6E808095160}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PullToRefreshAndroidForms.Shared", "PullToRefreshAndroidForms.Shared\PullToRefreshAndroidForms.Shared.shproj", "{1FFD2A0B-4F79-418A-B57B-C82FD426B1A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+		Ad-Hoc|iPhone = Ad-Hoc|iPhone
+		AppStore|iPhone = AppStore|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Release|iPhone.Build.0 = Release|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{D4906739-0CC1-4791-80EA-A6E808095160}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Android\PullToRefreshAndroidForms.Android.csproj
+	EndGlobalSection
+EndGlobal

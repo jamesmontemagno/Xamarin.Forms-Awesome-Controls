@@ -1,0 +1,26 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CustomProgressBar.Portable/CustomControls/CircularProgress.cs">
+    <Files>
+      <File FileName="CustomProgressBar/CustomControls/CircularProgress.cs" Line="21" Column="4" />
+      <File FileName="CustomProgressBar/App.cs" Line="28" Column="27" />
+      <File FileName="Android/Renderers/CircularProgressRenderer.cs" Line="39" Column="1" />
+      <File FileName="../../../../../Library/Frameworks/Mono.framework/External/xbuild/Xamarin/Android/Xamarin.Android.Common.targets" Line="1" Column="1" />
+      <File FileName="Android/MainActivity.cs" Line="12" Column="1" />
+      <File FileName="CustomProgressBar/Pages/ProgressBarXAML.xaml" Line="27" Column="43" />
+      <File FileName="CustomProgressBar/Pages/ProgressBarXAML.xaml.cs" Line="12" Column="54" />
+      <File FileName="CustomProgressBar/ViewModels/ProgressBarViewModel.cs" Line="2" Column="29" />
+      <File FileName="CustomProgressBar.Portable/App.cs" Line="1" Column="1" />
+      <File FileName="CustomProgressBar.Portable/ViewModels/ProgressBarViewModel.cs" Line="1" Column="1" />
+      <File FileName="CustomProgressBar.Portable/Properties/AssemblyInfo.cs" Line="1" Column="1" />
+      <File FileName="CustomProgressBar.Portable/Pages/ProgressBarXAML.xaml" Line="6" Column="100" />
+      <File FileName="CustomProgressBar.Portable/Pages/ProgressBarCodeBehind.cs" Line="1" Column="1" />
+      <File FileName="CustomProgressBar.Portable/CustomControls/CircularProgress.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CustomProgressBar.Android AndroidDeviceId-Debug="emulator-5554" />
+</Properties>
