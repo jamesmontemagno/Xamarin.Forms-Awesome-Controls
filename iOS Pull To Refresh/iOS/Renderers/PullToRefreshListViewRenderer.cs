@@ -3,7 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 using PullToRefresh.iOS.Renderers;
 using PullToRefresh;
-using MonoTouch.UIKit;
+using UIKit;
 
 [assembly:ExportRendererAttribute(typeof(PullToRefreshListView), typeof(PullToRefreshListViewRenderer))]
 namespace PullToRefresh.iOS.Renderers

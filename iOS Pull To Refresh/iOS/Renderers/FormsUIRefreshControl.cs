@@ -1,5 +1,5 @@
 ﻿using System;
-using MonoTouch.UIKit;
+using UIKit;
 using Xamarin.Forms;
 
 namespace PullToRefresh.iOS.Renderers
@@ -32,7 +32,7 @@ namespace PullToRefresh.iOS.Renderers
 				if (string.IsNullOrWhiteSpace (message))
 					return;
 
-				this.AttributedTitle = new MonoTouch.Foundation.NSAttributedString(message);
+				this.AttributedTitle = new Foundation.NSAttributedString(message);
 			}
 		}
 

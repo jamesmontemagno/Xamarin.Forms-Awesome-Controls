@@ -1,11 +1,8 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PullToRefreshAndroidForms.Shared/PullToRefreshContentView.cs">
+﻿<Properties StartupItem="Android/PullToRefreshAndroidForms.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Android/FormsSwipeRefreshLayout.cs">
     <Files>
-      <File FileName="Android/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="PullToRefreshAndroidForms.Shared/App.cs" Line="1" Column="1" />
-      <File FileName="Android/FormsSwipeRefreshLayout.cs" Line="36" Column="36" />
-      <File FileName="PullToRefreshAndroidForms.Shared/PullToRefreshContentView.cs" Line="2" Column="2" />
+      <File FileName="Android/FormsSwipeRefreshLayout.cs" Line="7" Column="7" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
