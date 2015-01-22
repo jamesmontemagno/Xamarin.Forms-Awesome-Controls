@@ -33,7 +33,7 @@ namespace CircleImage.Droid
       if (e.OldElement == null)
       {
 
-        if ((int)Android.OS.Build.VERSION.SdkInt < 18)
+        if ((int)Android.OS.Build.VERSION.SdkInt < 21)
           SetLayerType(LayerType.Software, null);
       }
 

@@ -1,11 +1,13 @@
-﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhoneRetina4.7.1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PullToRefresh/App.cs">
+﻿<Properties StartupItem="iOS/PullToRefresh.iOS.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/packages.config">
     <Files>
-      <File FileName="iOS/Renderers/PullToRefreshListViewRenderer.cs" Line="49" Column="5" />
-      <File FileName="PullToRefresh/App.cs" Line="27" Column="30" />
-      <File FileName="PullToRefresh/PullToRefreshListView.cs" Line="11" Column="4" />
-      <File FileName="iOS/Renderers/FormsUIRefreshControl.cs" Line="10" Column="3" />
+      <File FileName="iOS/Renderers/PullToRefreshListViewRenderer.cs" Line="1" Column="1" />
+      <File FileName="PullToRefresh/App.cs" Line="2" Column="2" />
+      <File FileName="PullToRefresh/PullToRefreshListView.cs" Line="1" Column="1" />
+      <File FileName="iOS/Renderers/FormsUIRefreshControl.cs" Line="1" Column="1" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="iOS/packages.config" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
