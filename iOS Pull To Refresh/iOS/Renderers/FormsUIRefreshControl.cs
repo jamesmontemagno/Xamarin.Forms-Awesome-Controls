@@ -13,7 +13,7 @@ namespace PullToRefresh.iOS.Renderers
 				var command = RefreshCommand;
 				if(command  == null)
 					return;
-
+				this.IsRefreshing = true;//trigger refreshing change
 				command.Execute(null);
 			};
 		}
