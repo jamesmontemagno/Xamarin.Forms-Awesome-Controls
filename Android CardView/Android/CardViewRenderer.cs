@@ -20,6 +20,8 @@ namespace CardViewFormsAndroid
             {
                 var control = new CardView(Forms.Context);
 
+                control.UseCompatPadding = true;
+
                 SetNativeControl(control);
                 var packager = new VisualElementPackager(this);
                 packager.Load();
@@ -32,6 +34,11 @@ namespace CardViewFormsAndroid
 
             if (Control != null)
             {
+
+                if (e.PropertyName == "BackgroundColor" || e.PropertyName == "Renderer")
+                {
+                    Control.SetCardBackgroundColor(Element.CardBackgroundColor.ToAndroid());                   
+                }
 
                 if (e.PropertyName == "Padding" || e.PropertyName == "Renderer")
                 {
