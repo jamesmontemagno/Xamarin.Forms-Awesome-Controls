@@ -24,12 +24,12 @@ namespace CardViewForms
 				var card = new CardContentView {
 					Padding = 40,
 					BackgroundColor = Color.Red,
-					CornderRadius = (float)i,
+					CornderRadius = 20,
 					Content = new Label{Text = "I am a card: " + i + "!!!",
 						Font = Font.SystemFontOfSize(NamedSize.Large),
 						VerticalOptions = LayoutOptions.Center}
 				};
-
+                card.Padding = 10;
 				stack.Children.Add (card);
 
 			}
