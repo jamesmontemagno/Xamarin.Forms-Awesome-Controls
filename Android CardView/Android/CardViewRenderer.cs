@@ -23,8 +23,6 @@ namespace CardViewFormsAndroid
                 control.UseCompatPadding = true;
 
                 SetNativeControl(control);
-                var packager = new VisualElementPackager(this);
-                packager.Load();
             }
         }
 
@@ -49,15 +47,7 @@ namespace CardViewFormsAndroid
                 {
                     Control.Radius = Element.CornderRadius;
                 }
-
             }
         }
-
-
-
-    }
-
-
-   
+    }  
 }
-
