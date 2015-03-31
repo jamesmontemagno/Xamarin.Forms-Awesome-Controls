@@ -37,7 +37,7 @@ namespace CardViewFormsAndroid
 
                 if (e.PropertyName == "BackgroundColor" || e.PropertyName == "Renderer")
                 {
-                    Control.SetCardBackgroundColor(Element.CardBackgroundColor.ToAndroid());                   
+                    Control.SetCardBackgroundColor(Element.BackgroundColor.ToAndroid());                   
                 }
 
                 if (e.PropertyName == "Padding" || e.PropertyName == "Renderer")

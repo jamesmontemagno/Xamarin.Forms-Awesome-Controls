@@ -16,9 +16,9 @@ namespace CardViewForms
 
 		
 
-        public new static readonly BindableProperty CardBackgroundColorProperty =
+        public new static readonly BindableProperty BackgroundColorProperty =
             BindableProperty.Create<CardContentView, Color>
-        (p => p.CardBackgroundColor, Color.White);
+        (p => p.BackgroundColor, Color.White);
 
         public float CornderRadius
         {
@@ -26,10 +26,10 @@ namespace CardViewForms
             set { SetValue(CornerRadiusProperty, value); }
         }
 
-        public new Color CardBackgroundColor
+        public new Color BackgroundColor
         {
-            get { return (Color)GetValue(CardBackgroundColorProperty); }
-            set { SetValue(CardBackgroundColorProperty, value); }
+            get { return (Color)GetValue(BackgroundColorProperty); }
+            set { SetValue(BackgroundColorProperty, value); }
         }
 
 		protected override SizeRequest OnSizeRequest (double widthConstraint, double heightConstraint)
