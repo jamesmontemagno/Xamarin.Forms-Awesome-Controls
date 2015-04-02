@@ -41,6 +41,8 @@ namespace CardViewFormsAndroid
             Packager = new VisualElementPackager(this);
             Packager.Load();
 
+            UseCompatPadding = true;
+
             SetContentPadding((int)TheView.Padding.Left, (int)TheView.Padding.Top,
                    (int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
 
