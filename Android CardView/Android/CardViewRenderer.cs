@@ -29,42 +29,35 @@ namespace CardViewFormsAndroid
 
 			this.Element = element;
 			if (this.Element != null) {
-				UpdateContent ();
+				//UpdateContent ();
 				this.Element.PropertyChanged += HandlePropertyChanged;
 			}
 
-			if (!init) {
-				init = true;
+            ViewGroup.RemoveAllViews();
 				//sizes to match the forms view
 				//updates properties, handles visual element properties
 				Tracker = new VisualElementTracker (this);
-				//add and remove children automatically
-				//this is broken right now so I do it manually
-				//packager = new VisualElementPackager (this);
-				//packager.Load ();
 
-				SetContentPadding ((int)TheView.Padding.Left, (int)TheView.Padding.Top,
-					(int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
+            Packager = new VisualElementPackager(this);
+            Packager.Load();
 
-				Radius = TheView.CornderRadius;
-			}
+            UseCompatPadding = true;
+
+            SetContentPadding((int)TheView.Padding.Left, (int)TheView.Padding.Top,
+                   (int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
+
+                Radius = TheView.CornderRadius;
+                SetCardBackgroundColor(TheView.BackgroundColor.ToAndroid());
+                
+                
+
+               
+          
 
 			if(ElementChanged != null)
 				ElementChanged (this, new VisualElementChangedEventArgs (oldElement, this.Element));
 		}
-
-		private void UpdateContent()
-		{
-			if (TheView.Content == null)
-				return;
-
-			if (packed != null)
-				RemoveView (packed);
-
-			var child = RendererFactory.GetRenderer (TheView.Content);
-			packed = child.ViewGroup;
-			AddView (packed);
-		}
+        
 
 	
 
@@ -77,15 +70,18 @@ namespace CardViewFormsAndroid
 		void HandlePropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			if (e.PropertyName == "Content") {
-				UpdateContent ();
-			} else if (e.PropertyName == CardContentView.PaddingProperty.PropertyName) {
+               
+                //Packager.Load();
+
+                Tracker.UpdateLayout();
+            } else if (e.PropertyName == CardContentView.PaddingProperty.PropertyName) {
 				SetContentPadding ((int)TheView.Padding.Left, (int)TheView.Padding.Top,
 					(int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
 			} else if (e.PropertyName == CardContentView.CornerRadiusProperty.PropertyName) {
 				this.Radius = TheView.CornderRadius;
 			} else if (e.PropertyName == CardContentView.BackgroundColorProperty.PropertyName) {
-				//if (TheView.BackgroundColor != null)
-				//	SetBackgroundColor (TheView.BackgroundColor.ToAndroid ());
+				if(TheView.BackgroundColor != null)
+				SetCardBackgroundColor (TheView.BackgroundColor.ToAndroid ());
 
 			}
 		}
@@ -111,7 +107,13 @@ namespace CardViewFormsAndroid
 			private set;
 		}
 
-		public Android.Views.ViewGroup ViewGroup {
+        public VisualElementPackager Packager
+        {
+            get;
+            private set;
+        }
+
+        public Android.Views.ViewGroup ViewGroup {
 			get{ return this; }
 		}
 
@@ -119,6 +121,8 @@ namespace CardViewFormsAndroid
 			get;
 			private set;
 		}
-	}
+
+       
+    }
 }
 

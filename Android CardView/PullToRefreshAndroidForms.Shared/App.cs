@@ -21,13 +21,26 @@ namespace CardViewForms
 			};
 
 			for (int i = 0; i < 10; i++) {
-				var card = new CardContentView {
+
+                var panel = new StackLayout();
+                panel.Children.Add(new Label
+                {
+                    Text = "I am a card: " + i + "!!!",
+                    Font = Font.SystemFontOfSize(NamedSize.Large),
+                    VerticalOptions = LayoutOptions.Center
+                });
+                panel.Children.Add(new Label
+                {
+                    Text = "Row 2",
+                    Font = Font.SystemFontOfSize(NamedSize.Large),
+                    VerticalOptions = LayoutOptions.Center
+                });
+
+                var card = new CardContentView {
 					Padding = 40,
 					BackgroundColor = Color.Red,
-					CornderRadius = (float)i,
-					Content = new Label{Text = "I am a card: " + i + "!!!",
-						Font = Font.SystemFontOfSize(NamedSize.Large),
-						VerticalOptions = LayoutOptions.Center}
+					CornderRadius = 10,
+					Content = panel
 				};
 
 				stack.Children.Add (card);
