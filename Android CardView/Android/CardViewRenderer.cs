@@ -33,23 +33,24 @@ namespace CardViewFormsAndroid
 				this.Element.PropertyChanged += HandlePropertyChanged;
 			}
 
-			if (!init) {
-				init = true;
+            ViewGroup.RemoveAllViews();
 				//sizes to match the forms view
 				//updates properties, handles visual element properties
 				Tracker = new VisualElementTracker (this);
-                //add and remove children automatically
-                //this is broken right now so I do it manually
-                SetContentPadding((int)TheView.Padding.Left, (int)TheView.Padding.Top,
+
+            Packager = new VisualElementPackager(this);
+            Packager.Load();
+
+            SetContentPadding((int)TheView.Padding.Left, (int)TheView.Padding.Top,
                    (int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
 
                 Radius = TheView.CornderRadius;
                 SetCardBackgroundColor(TheView.BackgroundColor.ToAndroid());
-
-                var packager = new VisualElementPackager (this);
-                packager.Load ();
                 
-			}
+                
+
+               
+          
 
 			if(ElementChanged != null)
 				ElementChanged (this, new VisualElementChangedEventArgs (oldElement, this.Element));
@@ -67,8 +68,11 @@ namespace CardViewFormsAndroid
 		void HandlePropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			if (e.PropertyName == "Content") {
-				//UpdateContent ();
-			} else if (e.PropertyName == CardContentView.PaddingProperty.PropertyName) {
+               
+                //Packager.Load();
+
+                Tracker.UpdateLayout();
+            } else if (e.PropertyName == CardContentView.PaddingProperty.PropertyName) {
 				SetContentPadding ((int)TheView.Padding.Left, (int)TheView.Padding.Top,
 					(int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
 			} else if (e.PropertyName == CardContentView.CornerRadiusProperty.PropertyName) {
@@ -101,7 +105,13 @@ namespace CardViewFormsAndroid
 			private set;
 		}
 
-		public Android.Views.ViewGroup ViewGroup {
+        public VisualElementPackager Packager
+        {
+            get;
+            private set;
+        }
+
+        public Android.Views.ViewGroup ViewGroup {
 			get{ return this; }
 		}
 
@@ -109,6 +119,8 @@ namespace CardViewFormsAndroid
 			get;
 			private set;
 		}
-	}
+
+       
+    }
 }
 
