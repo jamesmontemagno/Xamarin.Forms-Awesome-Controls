@@ -29,7 +29,7 @@ namespace CardViewFormsAndroid
 
 			this.Element = element;
 			if (this.Element != null) {
-				UpdateContent ();
+				//UpdateContent ();
 				this.Element.PropertyChanged += HandlePropertyChanged;
 			}
 
@@ -38,33 +38,23 @@ namespace CardViewFormsAndroid
 				//sizes to match the forms view
 				//updates properties, handles visual element properties
 				Tracker = new VisualElementTracker (this);
-				//add and remove children automatically
-				//this is broken right now so I do it manually
-				//packager = new VisualElementPackager (this);
-				//packager.Load ();
+                //add and remove children automatically
+                //this is broken right now so I do it manually
+                SetContentPadding((int)TheView.Padding.Left, (int)TheView.Padding.Top,
+                   (int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
 
-				SetContentPadding ((int)TheView.Padding.Left, (int)TheView.Padding.Top,
-					(int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
+                Radius = TheView.CornderRadius;
+                SetCardBackgroundColor(TheView.BackgroundColor.ToAndroid());
 
-				Radius = TheView.CornderRadius;
+                var packager = new VisualElementPackager (this);
+                packager.Load ();
+                
 			}
 
 			if(ElementChanged != null)
 				ElementChanged (this, new VisualElementChangedEventArgs (oldElement, this.Element));
 		}
-
-		private void UpdateContent()
-		{
-			if (TheView.Content == null)
-				return;
-
-			if (packed != null)
-				RemoveView (packed);
-
-			var child = RendererFactory.GetRenderer (TheView.Content);
-			packed = child.ViewGroup;
-			AddView (packed);
-		}
+        
 
 	
 
@@ -77,15 +67,15 @@ namespace CardViewFormsAndroid
 		void HandlePropertyChanged (object sender, System.ComponentModel.PropertyChangedEventArgs e)
 		{
 			if (e.PropertyName == "Content") {
-				UpdateContent ();
+				//UpdateContent ();
 			} else if (e.PropertyName == CardContentView.PaddingProperty.PropertyName) {
 				SetContentPadding ((int)TheView.Padding.Left, (int)TheView.Padding.Top,
 					(int)TheView.Padding.Right, (int)TheView.Padding.Bottom);
 			} else if (e.PropertyName == CardContentView.CornerRadiusProperty.PropertyName) {
 				this.Radius = TheView.CornderRadius;
 			} else if (e.PropertyName == CardContentView.BackgroundColorProperty.PropertyName) {
-				//if (TheView.BackgroundColor != null)
-				//	SetBackgroundColor (TheView.BackgroundColor.ToAndroid ());
+				if(TheView.BackgroundColor != null)
+				SetCardBackgroundColor (TheView.BackgroundColor.ToAndroid ());
 
 			}
 		}
