@@ -38,7 +38,6 @@ namespace CardViewForms
 
                 var card = new CardContentView {
 					Padding = 40,
-					BackgroundColor = Color.Red,
 					CornderRadius = 10,
 					Content = panel
 				};
