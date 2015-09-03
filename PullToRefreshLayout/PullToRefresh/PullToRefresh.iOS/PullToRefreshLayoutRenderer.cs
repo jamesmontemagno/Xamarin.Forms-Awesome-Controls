@@ -13,31 +13,40 @@
  * limitations under the License.
  */
 using System;
-using Xamarin.Forms.Platform.iOS;
-using Xamarin.Forms;
-using RefreshSample;
-using RefreshSample.iOS;
-using UIKit;
-using System.Windows.Input;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Windows.Input;
+using Foundation;
+using Refractored.XamForms.PullToRefresh;
+using Refractored.XamForms.PullToRefresh.iOS;
+using UIKit;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
+
 
 [assembly:ExportRenderer(typeof(PullToRefreshLayout), typeof(PullToRefreshLayoutRenderer))]
-namespace RefreshSample.iOS
+namespace Refractored.XamForms.PullToRefresh.iOS
 {
 
-    public class PullToRefreshLayoutRenderer : ViewRenderer<PullToRefreshLayout, UIView>
+    /// <summary>
+    /// Pull to refresh layout renderer.
+    /// </summary>
+    [Preserve]
+    public class PullToRefreshLayoutRenderer : ViewRenderer<Refractored.XamForms.PullToRefresh.PullToRefreshLayout, UIView>
     {
        
 
         UIRefreshControl refreshControl;
 
-
-        protected override void OnElementChanged (ElementChangedEventArgs<PullToRefreshLayout> e)
+        /// <summary>
+        /// Raises the element changed event.
+        /// </summary>
+        /// <param name="e">E.</param>
+        protected override void OnElementChanged (ElementChangedEventArgs<Refractored.XamForms.PullToRefresh.PullToRefreshLayout> e)
         {
             base.OnElementChanged (e);
 
-            if (e.OldElement != null || this.Element == null)
+            if (e.OldElement != null || Element == null)
                 return;
 
   
@@ -76,7 +85,8 @@ namespace RefreshSample.iOS
                 view.InsertSubview(refreshControl, index);
                 return true;
             }
-            else if (view is UIScrollView)
+
+            if (view is UIScrollView)
             {
                 view.InsertSubview(refreshControl, index);
                 return true;
@@ -97,7 +107,7 @@ namespace RefreshSample.iOS
 
 
 
-        BindableProperty rendererProperty = null;
+        BindableProperty rendererProperty;
 
         /// <summary>
         /// Gets the bindable property.
@@ -146,9 +156,9 @@ namespace RefreshSample.iOS
         /// Will throw an exception if the Element is not correct
         /// </summary>
         /// <value>The refresh view.</value>
-        public PullToRefreshLayout RefreshView
+        public Refractored.XamForms.PullToRefresh.PullToRefreshLayout RefreshView
         {
-            get { return this.Element == null ? null : (PullToRefreshLayout)Element; }
+            get { return Element; }
         }
 
 
@@ -187,6 +197,11 @@ namespace RefreshSample.iOS
             command.Execute(null);
         }
 
+        /// <summary>
+        /// Raises the element property changed event.
+        /// </summary>
+        /// <param name="sender">Sender.</param>
+        /// <param name="e">E.</param>
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
@@ -200,6 +215,10 @@ namespace RefreshSample.iOS
                 UpdateColors();
         }
 
+        /// <summary>
+        /// Dispose the specified disposing.
+        /// </summary>
+        /// <param name="disposing">If set to <c>true</c> disposing.</param>
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);

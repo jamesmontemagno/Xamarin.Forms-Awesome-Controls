@@ -97,6 +97,14 @@
       <Project>{E8A3B142-4FDA-44D2-AC4C-2578150D4E27}</Project>
       <Name>RefreshSample</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PullToRefresh\PullToRefresh\PullToRefresh.csproj">
+      <Project>{16178A98-6509-49BD-8261-7470C773C780}</Project>
+      <Name>PullToRefresh</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PullToRefresh\PullToRefresh.iOS\PullToRefresh.iOS.csproj">
+      <Project>{257337E4-559A-4462-A0B0-E9073363FF6A}</Project>
+      <Name>PullToRefresh.iOS</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Resources\Images.xcassets\AppIcons.appiconset\Contents.json" />
@@ -112,7 +120,6 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="PullToRefreshLayoutRenderer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />

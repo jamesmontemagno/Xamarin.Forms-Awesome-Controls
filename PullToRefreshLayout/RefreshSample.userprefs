@@ -1,18 +1,14 @@
-﻿<Properties StartupItem="iOS/RefreshSample.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="Droid/RefreshSample.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PullToRefreshLayoutRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="RefreshSample.sln">
     <Files>
-      <File FileName="RefreshSample/Views/ListViewPage.cs" Line="49" Column="48" />
-      <File FileName="RefreshSample/Views/ScrollViewPage.cs" Line="18" Column="18" />
-      <File FileName="Droid/PullToRefreshLayoutRenderer.cs" Line="116" Column="40" />
-      <File FileName="RefreshSample/ViewModels/TestViewModel.cs" Line="59" Column="24" />
-      <File FileName="RefreshSample/PullToRefreshLayout.cs" Line="55" Column="9" />
-      <File FileName="Droid/Properties/AndroidManifest.xml" Line="5" Column="12" />
-      <File FileName="Droid/Resources/values/styles.xml" Line="8" Column="5" />
-      <File FileName="RefreshSample/App.cs" Line="39" Column="48" />
-      <File FileName="RefreshSample/Views/GridPage.cs" Line="80" Column="44" />
-      <File FileName="RefreshSample/Views/StackLayoutPage.cs" Line="52" Column="22" />
-      <File FileName="iOS/PullToRefreshLayoutRenderer.cs" Line="218" Column="35" />
+      <File FileName="PullToRefresh/PullToRefresh.Droid/PullToRefreshLayoutRenderer.cs" Line="20" Column="42" />
+      <File FileName="PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" Line="49" Column="48" />
+      <File FileName="PullToRefresh/PullToRefresh.Droid/Properties/AssemblyInfo.cs" Line="7" Column="61" />
+      <File FileName="PullToRefresh/PullToRefresh.iOS/Properties/AssemblyInfo.cs" Line="20" Column="34" />
+      <File FileName="PullToRefreshLayout.nuspec" Line="26" Column="65" />
+      <File FileName="RefreshSample/Properties/AssemblyInfo.cs" Line="7" Column="40" />
+      <File FileName="RefreshSample.sln" Line="12" Column="99" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

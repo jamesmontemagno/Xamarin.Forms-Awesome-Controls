@@ -15,6 +15,7 @@ local.properties
 .classpath
 .settings/
 .loadpath
+.nuget/
 
 # External tool builders
 .externalToolBuilders/

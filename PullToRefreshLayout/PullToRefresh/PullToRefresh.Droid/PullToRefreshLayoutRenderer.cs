@@ -13,28 +13,40 @@
  * limitations under the License.
  */
 using System;
-using Xamarin.Forms;
-using Android.Support.V4.Widget;
-using Xamarin.Forms.Platform.Android;
 using System.ComponentModel;
-using RefreshSample;
-using RefreshSample.Droid;
+using Android.Runtime;
+using Android.Support.V4.Widget;
 using Android.Views;
+using Refractored.XamForms.PullToRefresh;
+using Refractored.XamForms.PullToRefresh.Droid;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
+
 
 [assembly:ExportRenderer(typeof(PullToRefreshLayout), typeof(PullToRefreshLayoutRenderer))]
-namespace RefreshSample.Droid
+namespace Refractored.XamForms.PullToRefresh.Droid
 {
+    /// <summary>
+    /// Pull to refresh layout renderer.
+    /// </summary>
+    [Preserve]
     public class PullToRefreshLayoutRenderer : SwipeRefreshLayout, 
         IVisualElementRenderer,
         SwipeRefreshLayout.IOnRefreshListener
     {
+        /// <summary>
+        /// Initializes a new instance of the
+        /// <see cref="Refractored.XamForms.PullToRefresh.Droid.PullToRefreshLayoutRenderer"/> class.
+        /// </summary>
         public PullToRefreshLayoutRenderer()
             : base(Forms.Context)
         {
         }
 
+        /// <summary>
+        /// Occurs when element changed.
+        /// </summary>
         public event EventHandler<VisualElementChangedEventArgs> ElementChanged;
-
 
 
         bool init;
@@ -125,6 +137,11 @@ namespace RefreshSample.Droid
                 SetProgressBackgroundColorSchemeColor(RefreshView.RefreshBackgroundColor.Value.ToAndroid());
         }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether this
+        /// <see cref="Refractored.XamForms.PullToRefresh.Droid.PullToRefreshLayoutRenderer"/> is refreshing.
+        /// </summary>
+        /// <value><c>true</c> if refreshing; otherwise, <c>false</c>.</value>
         public override bool Refreshing {
             get {
                 return base.Refreshing;
@@ -168,10 +185,17 @@ namespace RefreshSample.Droid
             if (viewGroup == null)
                 return base.CanChildScrollUp();
 
-            //is a scroll container such as listview, scroll view, gridview
-            if (viewGroup.IsScrollContainer)
+            var sdk = (int)global::Android.OS.Build.VERSION.SdkInt;
+            if (sdk >= 16)
             {
-                return base.CanChildScrollUp();
+                #if __ANDROID_16__
+               
+                //is a scroll container such as listview, scroll view, gridview
+                if (viewGroup.IsScrollContainer)
+                {
+                    return base.CanChildScrollUp();
+                }
+                #endif
             }
 
             //if you have something custom and you can't scroll up you might need to enable this
@@ -196,6 +220,11 @@ namespace RefreshSample.Droid
                     }
 
                 }
+                else if (child is Android.Widget.ScrollView)
+                {
+                    var scrollview = child as Android.Widget.ScrollView;
+                    return (scrollview.ScrollY <= 0.0);
+                }
                 else if (child is Android.Support.V4.Widget.SwipeRefreshLayout)
                 {
                     return CanScrollUp(child as ViewGroup);
@@ -213,7 +242,7 @@ namespace RefreshSample.Droid
         /// Will throw an exception if the Element is not correct
         /// </summary>
         /// <value>The refresh view.</value>
-        public PullToRefreshLayout RefreshView
+        public Refractored.XamForms.PullToRefresh.PullToRefreshLayout RefreshView
         {
             get { return this.Element == null ? null : (PullToRefreshLayout)Element; }
         }
@@ -269,6 +298,9 @@ namespace RefreshSample.Droid
             return new SizeRequest(new Size(packed.ViewGroup.MeasuredWidth, packed.ViewGroup.MeasuredHeight));
         }
 
+        /// <summary>
+        /// Updates the layout.
+        /// </summary>
         public void UpdateLayout()
         {
             if (Tracker == null)
@@ -277,17 +309,29 @@ namespace RefreshSample.Droid
             Tracker.UpdateLayout();
         }
 
+        /// <summary>
+        /// Gets the tracker.
+        /// </summary>
+        /// <value>The tracker.</value>
         public VisualElementTracker Tracker
         {
             get;
             private set;
         }
 
+        /// <summary>
+        /// Gets the view group.
+        /// </summary>
+        /// <value>The view group.</value>
         public Android.Views.ViewGroup ViewGroup
         {
             get{ return this; }
         }
 
+        /// <summary>
+        /// Gets the element.
+        /// </summary>
+        /// <value>The element.</value>
         public VisualElement Element
         {
             get;

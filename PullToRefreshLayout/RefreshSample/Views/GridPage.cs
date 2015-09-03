@@ -15,6 +15,7 @@
 using System;
 using Xamarin.Forms;
 using RefreshSample.ViewModels;
+using Refractored.XamForms.PullToRefresh;
 
 namespace RefreshSample.Views
 {
