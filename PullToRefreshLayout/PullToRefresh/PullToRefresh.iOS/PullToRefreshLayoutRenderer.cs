@@ -86,6 +86,12 @@ namespace Refractored.XamForms.PullToRefresh.iOS
                 return true;
             }
 
+            if (view is UICollectionView)
+            {
+                view.InsertSubview(refreshControl, index);
+                return true;
+            }
+
             if (view is UIScrollView)
             {
                 view.InsertSubview(refreshControl, index);
