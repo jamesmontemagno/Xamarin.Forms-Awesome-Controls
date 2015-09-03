@@ -10,6 +10,8 @@ For a detailed overview of the API and sample please read through my blog:
 
 Also available as a NuGet: https://www.nuget.org/packages/Refractored.XamForms.PullToRefresh/
 
+A BIG thank you to [Jason Smith](https://twitter.com/jassmith87) for his assistance on some tricky logic.
+
 ![](demo.gif)
 
 ### API
