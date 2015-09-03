@@ -1,0 +1,26 @@
+﻿<Properties StartupItem="iOS/RefreshSample.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/PullToRefreshLayoutRenderer.cs">
+    <Files>
+      <File FileName="RefreshSample/Views/ListViewPage.cs" Line="49" Column="48" />
+      <File FileName="RefreshSample/Views/ScrollViewPage.cs" Line="18" Column="18" />
+      <File FileName="Droid/PullToRefreshLayoutRenderer.cs" Line="116" Column="40" />
+      <File FileName="RefreshSample/ViewModels/TestViewModel.cs" Line="59" Column="24" />
+      <File FileName="RefreshSample/PullToRefreshLayout.cs" Line="55" Column="9" />
+      <File FileName="Droid/Properties/AndroidManifest.xml" Line="5" Column="12" />
+      <File FileName="Droid/Resources/values/styles.xml" Line="8" Column="5" />
+      <File FileName="RefreshSample/App.cs" Line="39" Column="48" />
+      <File FileName="RefreshSample/Views/GridPage.cs" Line="80" Column="44" />
+      <File FileName="RefreshSample/Views/StackLayoutPage.cs" Line="52" Column="22" />
+      <File FileName="iOS/PullToRefreshLayoutRenderer.cs" Line="218" Column="35" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/jamesmontemagno/Projects/RefreshSample/iOS/PullToRefreshLayoutRenderer.cs" line="247" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../Documents/GitHub/Xamarin.Forms-Awesome-Controls/Android Pull To Refresh/Android/FormsSwipeRefreshLayout.cs" line="100" offsetX="865" offsetY="2225" expression="child" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+</Properties>
