@@ -8,6 +8,10 @@ The goal was to create a cross-platform Xamarin.Forms Layout that could have itâ
 For a detailed overview of the API and sample please read through my blog:
 //Coming Soon
 
+Also available as a NuGet: https://www.nuget.org/packages/Refractored.XamForms.PullToRefresh/
+
+![](demo.gif)
+
 ### API
 Simply create a PullRefreshLayout like any other Layout and set the Content to a supported view.
 
