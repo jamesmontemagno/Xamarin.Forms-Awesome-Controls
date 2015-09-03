@@ -56,7 +56,11 @@ Content = new StackLayout
 * ScrollView
 
 ### Unofficial Supported Views
-* Potentially all Android Views, but it acts a bit odd
+* UICollectionView (iOS)
+* RecyclerView (Android)
+* GridView (Android)
+* Potentially all Android Views without a scroll, but it acts a bit odd on some
+* ^^You should probably use a ScrollView^^
 
 ### License
 The MIT License (MIT)
