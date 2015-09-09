@@ -5,6 +5,8 @@ Implementation of pull to refresh layout for Xamarin.Forms targeting iOS and And
 
 The goal was to create a cross-platform Xamarin.Forms Layout that could have it’s content set to anything and would enable pull to refresh capabilities. 
 
+A BIG thank you to [Jason Smith](https://twitter.com/jassmith87) for his assistance on some tricky logic.
+
 For a detailed overview of the API and sample please read through my blog:
 http://motzcod.es/post/128274430137/pull-to-refresh-anyish-xamarinforms-view
 
@@ -13,6 +15,8 @@ Also available as a NuGet: https://www.nuget.org/packages/Refractored.XamForms.P
 **Important**
 
 If you are using the NuGet ensure that you call “PullToRefreshLayoutRenderer.Init();” in both your MainActivity and AppDelegate. (Similar to Xamarin.Forms.Maps).
+
+
 
 ![](demo.gif)
 
