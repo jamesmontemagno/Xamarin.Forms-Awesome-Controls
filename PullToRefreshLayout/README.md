@@ -6,14 +6,18 @@ Implementation of pull to refresh layout for Xamarin.Forms targeting iOS and And
 The goal was to create a cross-platform Xamarin.Forms Layout that could have it’s content set to anything and would enable pull to refresh capabilities. 
 
 For a detailed overview of the API and sample please read through my blog:
-//Coming Soon
+http://motzcod.es/post/128274430137/pull-to-refresh-anyish-xamarinforms-view
 
 Also available as a NuGet: https://www.nuget.org/packages/Refractored.XamForms.PullToRefresh/
+
+**Important**
+
+If you are using the NuGet ensure that you call “PullToRefreshLayoutRenderer.Init();” in both your MainActivity and AppDelegate. (Similar to Xamarin.Forms.Maps).
 
 ![](demo.gif)
 
 ### API
-Simply create a PullRefreshLayout like any other Layout and set the Content to a supported view.
+Simply create a PullToRefreshLayout like any other Layout and set the Content to a supported view.
 
 
 ```csharp
@@ -49,6 +53,43 @@ Content = new StackLayout
     refreshView
   }
 };
+```
+
+You can of course do it in XAML:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="RefreshSample.Views.ScrollViewXamlPage"
+    xmlns:controls="clr-namespace:Refractored.XamForms.PullToRefresh;assembly=Refractored.XamForms.PullToRefresh"
+    Title="Xaml Scroll">
+   <controls:PullToRefreshLayout
+          IsPullToRefreshEnabled="True"
+          RefreshCommand="{Binding RefreshCommand}"
+          IsRefreshing="{Binding IsBusy}"
+          RefreshColor="Blue"> 
+          <ScrollView
+          HorizontalOptions="FillAndExpand"
+          VerticalOptions="FillAndExpand">
+            <StackLayout
+                  HorizontalOptions="FillAndExpand"
+                  VerticalOptions="FillAndExpand">
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Blue"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Red"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Yellow"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Purple"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Maroon"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Blue"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Red"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Yellow"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Purple"/>
+                <BoxView HeightRequest="100" WidthRequest="100" BackgroundColor="Maroon"/>
+            </StackLayout>
+          </ScrollView>
+   </controls:PullToRefreshLayout>
+</ContentPage>
+
 ```
 
 ### Officially Supported Views:

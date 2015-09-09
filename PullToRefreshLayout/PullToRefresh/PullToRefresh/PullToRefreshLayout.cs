@@ -85,15 +85,16 @@ namespace Refractored.XamForms.PullToRefresh
         /// Color property of refresh spinner color 
         /// </summary>
         public static readonly BindableProperty RefreshColorProperty =
-            BindableProperty.Create<PullToRefreshLayout, Color?>(
-                p => p.RefreshColor, null);
+            BindableProperty.Create<PullToRefreshLayout, Color>(
+                p => p.RefreshColor, Color.Default);
 
+       
         /// <summary>
         /// Refresh  color
         /// </summary>
-        public Color? RefreshColor
+        public Color RefreshColor
         {
-            get { return (Color?)GetValue(RefreshColorProperty); }
+            get { return (Color)GetValue(RefreshColorProperty); }
             set { SetValue(RefreshColorProperty, value); }
         }
 
@@ -103,15 +104,15 @@ namespace Refractored.XamForms.PullToRefresh
         /// Color property of refresh background color
         /// </summary>
         public static readonly BindableProperty RefreshBackgroundColorProperty =
-            BindableProperty.Create<PullToRefreshLayout, Color?>(
-                p => p.RefreshBackgroundColor, null);
+            BindableProperty.Create<PullToRefreshLayout, Color>(
+                p => p.RefreshBackgroundColor, Color.Default);
 
         /// <summary>
         /// Refresh background color
         /// </summary>
-        public Color? RefreshBackgroundColor
+        public Color RefreshBackgroundColor
         {
-            get { return (Color?)GetValue(RefreshBackgroundColorProperty); }
+            get { return (Color)GetValue(RefreshBackgroundColorProperty); }
             set { SetValue(RefreshBackgroundColorProperty, value); }
         }
 

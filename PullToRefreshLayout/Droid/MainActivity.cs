@@ -16,6 +16,7 @@ using Android.App;
 using Android.Content.PM;
 using Android.OS;
 using Android.Graphics.Drawables;
+using Refractored.XamForms.PullToRefresh.Droid;
 
 namespace RefreshSample.Droid
 {
@@ -27,6 +28,8 @@ namespace RefreshSample.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            PullToRefreshLayoutRenderer.Init();
 
             LoadApplication(new App());
 

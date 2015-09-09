@@ -31,10 +31,16 @@ namespace Refractored.XamForms.PullToRefresh.iOS
     /// <summary>
     /// Pull to refresh layout renderer.
     /// </summary>
-    [Preserve]
+    [Preserve(AllMembers=true)]
     public class PullToRefreshLayoutRenderer : ViewRenderer<Refractored.XamForms.PullToRefresh.PullToRefreshLayout, UIView>
     {
-       
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public async static void Init()
+        {
+            var temp = DateTime.Now;
+        }
 
         UIRefreshControl refreshControl;
 
@@ -57,8 +63,14 @@ namespace Refractored.XamForms.PullToRefresh.iOS
 
             var packed = RendererFactory.GetRenderer(Element.Content);
 
-            Element.Content.SetValue(RendererProperty, packed);
-
+            try
+            {
+                Element.Content.SetValue(RendererProperty, packed);
+            }
+            catch(Exception ex)
+            {
+                Debug.WriteLine("Unable to sent renderer property, maybe an issue: " + ex);
+            }
             SetNativeControl(packed.NativeView);
             try
             {
@@ -139,10 +151,10 @@ namespace Refractored.XamForms.PullToRefresh.iOS
         {
             if (RefreshView == null)
                 return;
-            if (RefreshView.RefreshColor.HasValue)
-                refreshControl.TintColor = RefreshView.RefreshColor.Value.ToUIColor();
-            if (RefreshView.RefreshBackgroundColor.HasValue)
-                refreshControl.BackgroundColor = RefreshView.RefreshBackgroundColor.Value.ToUIColor();
+            if (RefreshView.RefreshColor != Color.Default)
+                refreshControl.TintColor = RefreshView.RefreshColor.ToUIColor();
+            if (RefreshView.RefreshBackgroundColor != Color.Default)
+                refreshControl.BackgroundColor = RefreshView.RefreshBackgroundColor.ToUIColor();
         }
 
 

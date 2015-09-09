@@ -37,6 +37,9 @@
     <Compile Include="Views\ScrollViewPage.cs" />
     <Compile Include="Views\StackLayoutPage.cs" />
     <Compile Include="Views\GridPage.cs" />
+    <Compile Include="Views\ScrollViewXamlPage.xaml.cs">
+      <DependentUpon>ScrollViewXamlPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.1.4.4.6392\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.targets')" />
@@ -63,5 +66,11 @@
       <Project>{16178A98-6509-49BD-8261-7470C773C780}</Project>
       <Name>PullToRefresh</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\ScrollViewXamlPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <LogicalName>ScrollViewXamlPage.xaml</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

@@ -23,6 +23,7 @@ namespace RefreshSample
         {
 
             var scrollView = new Button { Text = "ScrollView" };
+            var scrollViewXaml = new Button { Text = "ScrollView Xaml" };
             var listView = new Button  { Text = "ListView" };
             var stackLayout = new Button { Text = "StackLayout" };
             var grid = new Button { Text = "Grid" };
@@ -52,6 +53,7 @@ namespace RefreshSample
                                 listView,
                                 stackLayout,
                                 grid,
+                                scrollViewXaml,
                                 new Label
                                 {
                                     Text = "Inside a layout:"
@@ -70,6 +72,7 @@ namespace RefreshSample
                 };
 
             scrollView.Clicked += (sender, e) => page.Navigation.PushAsync(new ScrollViewPage(false));
+            scrollViewXaml.Clicked += (sender, e) => page.Navigation.PushAsync(new ScrollViewXamlPage());
             scrollViewIn.Clicked += (sender, e) => page.Navigation.PushAsync(new ScrollViewPage(true));
             listView.Clicked += (sender, e) => page.Navigation.PushAsync(new ListViewPage(false));
             listViewIn.Clicked += (sender, e) => page.Navigation.PushAsync(new ListViewPage(true));

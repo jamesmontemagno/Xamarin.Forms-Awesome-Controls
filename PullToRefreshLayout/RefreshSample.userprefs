@@ -1,19 +1,33 @@
-﻿<Properties StartupItem="Droid/RefreshSample.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6.8.4" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="RefreshSample.sln">
+﻿<Properties StartupItem="iOS/RefreshSample.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6Plus.8.4" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MainActivity.cs">
     <Files>
-      <File FileName="PullToRefresh/PullToRefresh.Droid/PullToRefreshLayoutRenderer.cs" Line="20" Column="42" />
-      <File FileName="PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" Line="49" Column="48" />
-      <File FileName="PullToRefresh/PullToRefresh.Droid/Properties/AssemblyInfo.cs" Line="7" Column="61" />
-      <File FileName="PullToRefresh/PullToRefresh.iOS/Properties/AssemblyInfo.cs" Line="20" Column="34" />
-      <File FileName="PullToRefreshLayout.nuspec" Line="26" Column="65" />
-      <File FileName="RefreshSample/Properties/AssemblyInfo.cs" Line="7" Column="40" />
-      <File FileName="RefreshSample.sln" Line="12" Column="99" />
+      <File FileName="RefreshSample/Views/ScrollViewXamlPage.xaml" Line="1" Column="1" />
+      <File FileName="PullToRefresh/PullToRefresh.Droid/PullToRefreshLayoutRenderer.cs" Line="1" Column="1" />
+      <File FileName="PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" Line="53" Column="13" />
+      <File FileName="RefreshSample/Views/GridPage.cs" Line="47" Column="25" />
+      <File FileName="PullToRefresh/PullToRefresh/PullToRefreshLayout.cs" Line="1" Column="1" />
+      <File FileName="RefreshSample/Views/StackLayoutPage.cs" Line="29" Column="31" />
+      <File FileName="iOS/Main.cs" Line="1" Column="1" />
+      <File FileName="iOS/AppDelegate.cs" Line="27" Column="13" />
+      <File FileName="Droid/MainActivity.cs" Line="28" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/jamesmontemagno/Projects/RefreshSample/iOS/PullToRefreshLayoutRenderer.cs" line="247" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Projects/RefreshSample/iOS/PullToRefreshLayoutRenderer.cs" line="247" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="89" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="71" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="75" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="47" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="132" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="146" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="157" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="161" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="173" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="185" column="1" />
+      <Breakpoint enabled="false" file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="236" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/PullToRefreshLayout/PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" line="62" column="19" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches>

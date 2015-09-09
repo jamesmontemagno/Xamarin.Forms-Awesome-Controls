@@ -29,11 +29,19 @@ namespace Refractored.XamForms.PullToRefresh.Droid
     /// <summary>
     /// Pull to refresh layout renderer.
     /// </summary>
-    [Preserve]
+    [Preserve(AllMembers = true)]
     public class PullToRefreshLayoutRenderer : SwipeRefreshLayout, 
         IVisualElementRenderer,
         SwipeRefreshLayout.IOnRefreshListener
     {
+        /// <summary>
+        /// Used for registration with dependency service
+        /// </summary>
+        public async static void Init()
+        {
+            var temp = DateTime.Now;
+        }
+
         /// <summary>
         /// Initializes a new instance of the
         /// <see cref="Refractored.XamForms.PullToRefresh.Droid.PullToRefreshLayoutRenderer"/> class.
@@ -100,7 +108,16 @@ namespace Refractored.XamForms.PullToRefresh.Droid
                 RemoveView(packed.ViewGroup);
 
             packed = RendererFactory.GetRenderer(RefreshView.Content);
-            RefreshView.Content.SetValue(RendererProperty, packed);
+
+            try
+            {
+                RefreshView.Content.SetValue(RendererProperty, packed);
+            }
+            catch(Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("Unable to sent renderer property, maybe an issue: " + ex);
+            }
+
             AddView(packed.ViewGroup, LayoutParams.MatchParent);
 
         }
@@ -131,10 +148,10 @@ namespace Refractored.XamForms.PullToRefresh.Droid
         {
             if (RefreshView == null)
                 return;
-            if (RefreshView.RefreshColor.HasValue)
-                SetColorSchemeColors(RefreshView.RefreshColor.Value.ToAndroid());
-            if (RefreshView.RefreshBackgroundColor.HasValue)
-                SetProgressBackgroundColorSchemeColor(RefreshView.RefreshBackgroundColor.Value.ToAndroid());
+            if (RefreshView.RefreshColor != Color.Default)
+                SetColorSchemeColors(RefreshView.RefreshColor.ToAndroid());
+            if (RefreshView.RefreshBackgroundColor != Color.Default)
+                SetProgressBackgroundColorSchemeColor(RefreshView.RefreshBackgroundColor.ToAndroid());
         }
 
         /// <summary>

@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using Refractored.XamForms.PullToRefresh.iOS;
 
 namespace RefreshSample.iOS
 {
@@ -22,6 +23,8 @@ namespace RefreshSample.iOS
                 });
             
             global::Xamarin.Forms.Forms.Init();
+
+            PullToRefreshLayoutRenderer.Init();
 
             LoadApplication(new App());
 
