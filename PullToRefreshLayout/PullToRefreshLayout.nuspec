@@ -13,12 +13,12 @@
        <description>
          Add Pull to Refresh to ScrollView or group a ListView. See Project for more details
          Ensure you call new PullToRefreshLayoutRenderer.Init() on each platform!
-         Built against:  1.4.4.6392
+         Built against:  1.5.0.6446
        </description>
        <summary>Enhanced Pull To Refresh Layout for Xamarin.Forms</summary>
        <tags>xamarin, pcl, xam.pcl, windows phone, winphone, wp8, android, xamarin.forms, ios, pull to refresh, refresh, swipe</tags>
        <dependencies>
-         <dependency id="Xamarin.Forms" version="1.4.4.6392" />
+         <dependency id="Xamarin.Forms" version="1.5.0.6446" />
        </dependencies>
    </metadata>
    <files>
@@ -38,6 +38,6 @@
      <file src="PullToRefresh/PullToRefresh.iOS/bin/Release/Refractored.XamForms.PullToRefresh.iOS.xml" target="lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.iOS.xml" />
      <file src="PullToRefresh/PullToRefresh/bin/Release/Refractored.XamForms.PullToRefresh.dll" target="lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.dll" />
      <file src="PullToRefresh/PullToRefresh/bin/Release/Refractored.XamForms.PullToRefresh.xml" target="lib\Xamarin.iOS10\Refractored.XamForms.PullToRefresh.xml" />
-      
+
    </files>
 </package>
