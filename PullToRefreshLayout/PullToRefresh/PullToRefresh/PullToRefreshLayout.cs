@@ -31,6 +31,7 @@ namespace Refractored.XamForms.PullToRefresh
             IsClippedToBounds = true;
             VerticalOptions = LayoutOptions.FillAndExpand;
             HorizontalOptions = LayoutOptions.FillAndExpand;
+            BackgroundColor = Color.White;
         }
 
         /// <summary>
