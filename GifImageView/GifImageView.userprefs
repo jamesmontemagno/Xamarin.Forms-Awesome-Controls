@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="iOS/GifViewer.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6s.9.0" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs">
+    <Files>
+      <File FileName="GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs" Line="31" Column="1" />
+      <File FileName="GifImageView/GifImageView.FormsPlugin.Android/GifImageViewImplementation.cs" Line="48" Column="1" />
+      <File FileName="GifViewer/GifViewer.cs" Line="19" Column="101" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/GifImageView/GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs" line="47" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/GifImageView/GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs" line="33" column="1" />
+      <Breakpoint file="/Users/jamesmontemagno/Documents/GitHub/Xamarin.Forms-Awesome-Controls/GifImageView/GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs" line="31" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
