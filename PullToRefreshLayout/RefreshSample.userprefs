@@ -1,17 +1,17 @@
-﻿<Properties StartupItem="iOS/RefreshSample.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone6Plus.8.4" />
+﻿<Properties StartupItem="Droid/RefreshSample.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhoneSimulator" PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="PullToRefresh/PullToRefresh/PullToRefreshLayout.cs">
     <Files>
       <File FileName="RefreshSample/Views/ScrollViewXamlPage.xaml" Line="1" Column="1" />
-      <File FileName="PullToRefresh/PullToRefresh.Droid/PullToRefreshLayoutRenderer.cs" Line="44" Column="9" />
-      <File FileName="PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" Line="61" Column="13" />
+      <File FileName="PullToRefresh/PullToRefresh.Droid/PullToRefreshLayoutRenderer.cs" Line="1" Column="1" />
+      <File FileName="PullToRefresh/PullToRefresh.iOS/PullToRefreshLayoutRenderer.cs" Line="1" Column="1" />
       <File FileName="RefreshSample/Views/GridPage.cs" Line="1" Column="1" />
-      <File FileName="PullToRefresh/PullToRefresh/PullToRefreshLayout.cs" Line="1" Column="1" />
+      <File FileName="PullToRefresh/PullToRefresh/PullToRefreshLayout.cs" Line="25" Column="6" />
       <File FileName="RefreshSample/Views/StackLayoutPage.cs" Line="1" Column="1" />
       <File FileName="iOS/Main.cs" Line="1" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="27" Column="45" />
-      <File FileName="Droid/MainActivity.cs" Line="32" Column="45" />
-      <File FileName="PullToRefreshLayout.nuspec" Line="15" Column="60" />
+      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
+      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="PullToRefreshLayout.nuspec" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
