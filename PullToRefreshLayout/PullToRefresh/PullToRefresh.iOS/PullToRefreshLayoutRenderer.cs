@@ -34,6 +34,10 @@ namespace Refractored.XamForms.PullToRefresh.iOS
     [Preserve(AllMembers=true)]
     public class PullToRefreshLayoutRenderer : ViewRenderer<Refractored.XamForms.PullToRefresh.PullToRefreshLayout, UIView>
     {
+        public override void LayoutSubviews()
+        {
+            base.LayoutSubviews();
+        }
         /// <summary>
         /// Used for registration with dependency service
         /// </summary>
@@ -61,7 +65,7 @@ namespace Refractored.XamForms.PullToRefresh.iOS
 
             refreshControl.ValueChanged += OnRefresh;
 
-            var packed = RendererFactory.GetRenderer(Element.Content);
+            /*var packed = RendererFactory.GetRenderer(Element.Content);
 
             try
             {
@@ -70,11 +74,11 @@ namespace Refractored.XamForms.PullToRefresh.iOS
             catch(Exception ex)
             {
                 Debug.WriteLine("Unable to sent renderer property, maybe an issue: " + ex);
-            }
-            SetNativeControl(packed.NativeView);
+            }*/
+            //SetNativeControl(packed.NativeView);
             try
             {
-                TryInsertRefresh(Control);
+                TryInsertRefresh(this);
             }
             catch(Exception ex)
             {
