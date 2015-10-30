@@ -111,6 +111,7 @@ namespace Refractored.XamForms.PullToRefresh.iOS
             if (view is UIScrollView)
             {
                 view.InsertSubview(refreshControl, index);
+				((UIScrollView)view).AlwaysBounceVertical = true;
                 return true;
             }
 
