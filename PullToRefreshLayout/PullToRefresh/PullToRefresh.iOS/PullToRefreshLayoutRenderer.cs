@@ -65,17 +65,6 @@ namespace Refractored.XamForms.PullToRefresh.iOS
 
             refreshControl.ValueChanged += OnRefresh;
 
-            /*var packed = RendererFactory.GetRenderer(Element.Content);
-
-            try
-            {
-                Element.Content.SetValue(RendererProperty, packed);
-            }
-            catch(Exception ex)
-            {
-                Debug.WriteLine("Unable to sent renderer property, maybe an issue: " + ex);
-            }*/
-            //SetNativeControl(packed.NativeView);
             try
             {
                 TryInsertRefresh(this);
