@@ -107,7 +107,7 @@ namespace Refractored.XamForms.PullToRefresh.Droid
             if (packed != null)
                 RemoveView(packed.ViewGroup);
 
-            packed = RendererFactory.GetRenderer(RefreshView.Content);
+            packed = Platform.CreateRenderer (RefreshView.Content);
 
             try
             {
@@ -136,7 +136,7 @@ namespace Refractored.XamForms.PullToRefresh.Droid
                     return rendererProperty;
 
                 var type = Type.GetType("Xamarin.Forms.Platform.Android.Platform, Xamarin.Forms.Platform.Android");
-                var prop = type.GetField("RendererProperty");
+                var prop = type.GetField("RendererProperty", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Static);
                 var val = prop.GetValue(null);
                 rendererProperty = val as BindableProperty;
 
