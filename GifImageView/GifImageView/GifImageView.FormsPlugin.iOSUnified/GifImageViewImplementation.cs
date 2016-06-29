@@ -29,7 +29,6 @@ namespace GifImageView.FormsPlugin.iOSUnified
         /// </summary>
         public static void Init() { }
 #pragma warning restore CS0108 // Member hides inherited member; missing new keyword
-        bool loaded;
 
         protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
@@ -39,11 +38,8 @@ namespace GifImageView.FormsPlugin.iOSUnified
         protected override async void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName == "Renderer")
+            if (e.PropertyName == Image.SourceProperty.PropertyName)
             {
-                if (loaded)
-                    return;
-
                 NSData bytes = null;
 
                 var s = Element.Source;
@@ -66,7 +62,6 @@ namespace GifImageView.FormsPlugin.iOSUnified
 
                 try
                 {
-                    loaded = true;
                     var sourceRef = CGImageSource.FromData(bytes);
                     CreateAnimatedImageView(sourceRef, Control);
                 }

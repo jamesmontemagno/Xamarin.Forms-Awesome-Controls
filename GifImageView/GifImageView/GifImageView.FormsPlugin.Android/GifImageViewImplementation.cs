@@ -52,11 +52,8 @@ namespace GifImageView.FormsPlugin.Android
         protected override async void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName == "Renderer")
+            if (e.PropertyName == Image.SourceProperty.PropertyName)
             {
-                if (loaded)
-                    return;
-
                 byte[] bytes = null;
 
                 var s = Element.Source;
@@ -79,7 +76,7 @@ namespace GifImageView.FormsPlugin.Android
 
                 try
                 {
-                    loaded = true;
+                    gif.StopAnimation();
                     gif.SetBytes(bytes);
                     gif.StartAnimation();
                 }
