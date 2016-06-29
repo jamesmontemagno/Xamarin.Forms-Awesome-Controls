@@ -10,8 +10,11 @@ using CoreGraphics;
 using Foundation;
 using CoreAnimation;
 using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Diagnostics;
 
-[assembly: ExportRenderer(typeof(GifImageView.FormsPlugin.Abstractions.GifImageViewControl), typeof(GifImageViewRenderer))]
+[assembly: ExportRenderer(typeof(GifImageViewControl), typeof(GifImageViewRenderer))]
 namespace GifImageView.FormsPlugin.iOSUnified
 {
     /// <summary>
@@ -19,17 +22,20 @@ namespace GifImageView.FormsPlugin.iOSUnified
     /// </summary>
     public class GifImageViewRenderer : ImageRenderer
     {
-        
+
+#pragma warning disable CS0108 // Member hides inherited member; missing new keyword
         /// <summary>
         /// Used for registration with dependency service
         /// </summary>
         public static void Init() { }
-        bool loaded = false;
+#pragma warning restore CS0108 // Member hides inherited member; missing new keyword
+        bool loaded;
 
         protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
             base.OnElementChanged(e);
         }
+
         protected override async void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
@@ -37,24 +43,36 @@ namespace GifImageView.FormsPlugin.iOSUnified
             {
                 if (loaded)
                     return;
-                
-                var uriImageSource = Element.Source as UriImageSource;
-                if (uriImageSource == null || uriImageSource.Uri == null)
+
+                NSData bytes = null;
+
+                var s = Element.Source;
+                if (s is UriImageSource)
+                {
+                    using (var client = new HttpClient())
+                        bytes = NSData.FromArray(await client.GetByteArrayAsync(((UriImageSource)s).Uri));
+                }
+                else if (s is StreamImageSource)
+                {
+                    bytes = NSData.FromStream(await ((StreamImageSource)s).Stream(default(CancellationToken)));
+                }
+                else if (s is FileImageSource)
+                {
+                    bytes = await Task.Run(() => { return NSData.FromFile(((FileImageSource)s).File); });
+                }
+
+                if(bytes == null)
                     return;
 
                 try
                 {
                     loaded = true;
-                    using (var client = new HttpClient())
-                    {
-                        var bytes = await client.GetByteArrayAsync(uriImageSource.Uri);
-                        var sourceRef = CGImageSource.FromData(NSData.FromArray(bytes));
-                        CreateAnimatedImageView (sourceRef, this.Control);
-                    }
+                    var sourceRef = CGImageSource.FromData(bytes);
+                    CreateAnimatedImageView(sourceRef, Control);
                 }
                 catch(Exception ex)
                 {
-                    Console.WriteLine("Unable to load gif: " + ex.Message);
+                    Debug.WriteLine("Unable to load gif: " + ex.Message);
                 }
 
             }
@@ -75,7 +93,7 @@ namespace GifImageView.FormsPlugin.iOSUnified
                 var frameImage = imageSource.CreateImage(i, null);
 
                 frameCGImages.Add(frameImage);
-                frameImages.Add(NSObject.FromObject(frameImage));
+                frameImages.Add(FromObject(frameImage));
 
                 var properties = imageSource.GetProperties(i, null);
                 var duration = properties.Dictionary["{GIF}"];

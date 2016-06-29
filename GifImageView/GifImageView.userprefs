@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="Droid/GifViewer.Droid.csproj" RefactoringSettings.EnableRefactorings="True">
+﻿<Properties StartupItem="iOS/GifViewer.iOS.csproj" RefactoringSettings.EnableRefactorings="True">
   <MonoDevelop.Ide.Workbench ActiveDocument="GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs">
     <Files>
       <File FileName="GifImageView/GifImageView.FormsPlugin.iOSUnified/GifImageViewImplementation.cs" Line="44" Column="17" />
@@ -12,5 +12,5 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.GifViewer.Droid PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
+  <MonoDevelop.Ide.ItemProperties.GifViewer.Droid PreferredExecutionTarget="Android.Nexus 4 (Lollipop)" />
 </Properties>
