@@ -4,8 +4,11 @@ using Xamarin.Forms;
 using GifImageView.FormsPlugin.Android;
 using Xamarin.Forms.Platform.Android;
 using System.Net.Http;
+using System.Threading;
+using System.IO;
+using System.Threading.Tasks;
 
-[assembly: ExportRenderer(typeof(GifImageView.FormsPlugin.Abstractions.GifImageViewControl), typeof(GifImageViewRenderer))]
+[assembly: ExportRenderer(typeof(GifImageViewControl), typeof(GifImageViewRenderer))]
 namespace GifImageView.FormsPlugin.Android
 {
     /// <summary>
@@ -22,40 +25,64 @@ namespace GifImageView.FormsPlugin.Android
         protected override void OnElementChanged(ElementChangedEventArgs<Image> e)
         {
             base.OnElementChanged(e);
-            if (e.OldElement != null || this.Element == null)
+            if (e.OldElement != null || Element == null)
                 return;
 
-            gif = new Felipecsl.GifImageViewLibrary.GifImageView(Xamarin.Forms.Forms.Context);
+            gif = new Felipecsl.GifImageViewLibrary.GifImageView(Forms.Context);
 
             SetNativeControl(gif);
         }
 
-        bool loaded = false;
+        static async Task<byte[]> GetBytesFromStreamAsync(Stream stream)
+        {
+            using (stream)
+            {
+                if (stream == null || stream.Length == 0)
+                    return null;
+
+                var bytes = new byte[stream.Length];
+                if (await stream.ReadAsync(bytes, 0, (int)stream.Length) > 0)
+                    return bytes;
+            }
+
+            return null;
+        }
+
+        bool loaded;
         protected override async void OnElementPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName == "Renderer")
+            if (e.PropertyName == Image.SourceProperty.PropertyName)
             {
-                if (loaded)
-                    return;
+                byte[] bytes = null;
 
-                var uriImageSource = Element.Source as UriImageSource;
-                if (uriImageSource == null || uriImageSource.Uri == null)
+                var s = Element.Source;
+                if (s is UriImageSource)
+                {
+                    using (var client = new HttpClient())
+                        bytes = await client.GetByteArrayAsync(((UriImageSource)s).Uri);
+                }
+                else if (s is StreamImageSource)
+                {
+                    bytes = await GetBytesFromStreamAsync(await ((StreamImageSource)s).Stream(default(CancellationToken)));
+                }
+                else if (s is FileImageSource)
+                {
+                    bytes = await GetBytesFromStreamAsync(File.OpenRead(((FileImageSource)s).File));
+                }
+
+                if (bytes == null)
                     return;
 
                 try
                 {
-                    loaded = true;
-                    using (var client = new HttpClient())
-                    {
-                        var bytes = await client.GetByteArrayAsync(uriImageSource.Uri);
-                        gif.SetBytes(bytes);
-                        gif.StartAnimation();
-                    }
+                    gif.StopAnimation();
+                    gif.SetBytes(bytes);
+                    gif.StartAnimation();
                 }
                 catch(Exception ex)
-                {
-                    Console.WriteLine("Unable to load gif: " + ex.Message);
+                { 
+                    System.Diagnostics.Debug.WriteLine("Unable to load gif: " + ex.Message);
                 }
 
             }
